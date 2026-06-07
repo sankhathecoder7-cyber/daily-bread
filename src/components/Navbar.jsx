@@ -9,58 +9,22 @@ export default function Navbar() {
     textDecoration: "none",
     color: active ? "#fff" : "#333",
     background: active ? "#0056b3" : "transparent",
-    padding: "6px 10px",
+    padding: "8px 12px",
     borderRadius: "6px",
     fontSize: "13px",
     fontWeight: "500",
     whiteSpace: "nowrap",
-    flexShrink: 0,
   });
 
   return (
-    <nav
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        height: "70px",
-        background: "#fff",
-        display: "flex",
-        alignItems: "center",
-        padding: "0 10px",
-        boxShadow: "0 2px 10px rgba(0,0,0,0.08)",
-        zIndex: 1000,
-        overflow: "hidden",
-      }}
-    >
+    <nav className="navbar">
       {/* LOGO */}
-      <Link
-        to="/"
-        style={{
-          fontWeight: "bold",
-          fontSize: "15px",
-          textDecoration: "none",
-          color: "#111",
-          whiteSpace: "nowrap",
-          flexShrink: 0,
-        }}
-      >
+      <Link to="/" className="logo">
         🍞 DAILY BREAD
       </Link>
 
-      {/* MENU (FIXED MOBILE SCROLL) */}
-      <div
-        style={{
-          display: "flex",
-          gap: "6px",
-          flex: 1,
-          margin: "0 10px",
-          overflowX: "auto",
-          whiteSpace: "nowrap",
-          alignItems: "center",
-        }}
-      >
+      {/* NAV LINKS (NO HAMBURGER, RESPONSIVE WRAP) */}
+      <div className="nav-links">
         <Link style={linkStyle(isActive("/"))} to="/">Home</Link>
         <Link style={linkStyle(isActive("/jobs"))} to="/jobs">Jobs</Link>
         <Link style={linkStyle(isActive("/tenders"))} to="/tenders">Tenders</Link>
@@ -70,19 +34,7 @@ export default function Navbar() {
       </div>
 
       {/* LOGIN */}
-      <Link
-        to="/login"
-        style={{
-          background: "#0056b3",
-          color: "#fff",
-          padding: "6px 10px",
-          borderRadius: "6px",
-          fontSize: "13px",
-          fontWeight: "bold",
-          textDecoration: "none",
-          flexShrink: 0,
-        }}
-      >
+      <Link className="login-btn" to="/login">
         Login
       </Link>
     </nav>
