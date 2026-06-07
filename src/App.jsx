@@ -6,6 +6,7 @@ import Home from "./pages/Home.jsx";
 import Jobs from "./pages/Jobs.jsx";
 import JobDetails from "./pages/JobDetails.jsx";
 import Contact from "./pages/Contact.jsx";
+
 // SAAS PAGES
 import PostJob from "./pages/PostJob.jsx";
 import Tenders from "./pages/Tenders.jsx";
@@ -19,95 +20,26 @@ export default function App() {
     <BrowserRouter>
       <Routes>
 
-        {/* WRAPPED PAGES (WITH NAVBAR) */}
-        <Route
-          path="/"
-          element={
-            <Layout>
-              <Home />
-            </Layout>
-          }
-        />
+        {/* HOME */}
+        <Route path="/" element={<Layout><Home /></Layout>} />
 
-        <Route
-          path="/jobs"
-          element={
-            <Layout>
-              <Jobs />
-            </Layout>
-          }
-        />
+        {/* JOBS */}
+        <Route path="/jobs" element={<Layout><Jobs /></Layout>} />
+        <Route path="/job/:id" element={<Layout><JobDetails /></Layout>} />
 
-        <Route
-          path="/job/:id"
-          element={
-            <Layout>
-              <JobDetails />
-            </Layout>
-          }
-        />
+        {/* SAAS FEATURES */}
+        <Route path="/post-job" element={<Layout><PostJob /></Layout>} />
+        <Route path="/tenders" element={<Layout><Tenders /></Layout>} />
+        <Route path="/post-tender" element={<Layout><PostTender /></Layout>} />
+        <Route path="/blog" element={<Layout><Blog /></Layout>} />
+        <Route path="/other" element={<Layout><Other /></Layout>} />
 
-        <Route
-          path="/post-job"
-          element={
-            <Layout>
-              <PostJob />
-            </Layout>
-          }
-        />
+        {/* AUTH */}
+        <Route path="/login" element={<Layout><Login /></Layout>} />
 
-        <Route
-          path="/tenders"
-          element={
-            <Layout>
-              <Tenders />
-            </Layout>
-          }
-        />
+        {/* CONTACT */}
+        <Route path="/contact" element={<Layout><Contact /></Layout>} />
 
-        <Route
-          path="/post-tender"
-          element={
-            <Layout>
-              <PostTender />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/blog"
-          element={
-            <Layout>
-              <Blog />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/other"
-          element={
-            <Layout>
-              <Other />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/login"
-          element={
-            <Layout>
-              <Login />
-            </Layout>
-          }
-        />
-<Route
-  path="/contact"
-  element={
-    <Layout>
-      <Contact />
-    </Layout>
-  }
-/>
       </Routes>
     </BrowserRouter>
   );

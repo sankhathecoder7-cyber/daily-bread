@@ -9,6 +9,7 @@ export default function Layout({ children }) {
         display: "flex",
         flexDirection: "column",
         background: "#f5f7fa",
+        overflowX: "hidden",
       }}
     >
       {/* NAVBAR */}
@@ -18,9 +19,13 @@ export default function Layout({ children }) {
       <main
         style={{
           flex: 1,
-          paddingTop: "80px",
-          paddingLeft: "15px",
-          paddingRight: "15px",
+          paddingTop: "90px", // FIX: prevents navbar overlap
+          paddingLeft: "12px",
+          paddingRight: "12px",
+          maxWidth: "1200px",
+          width: "100%",
+          margin: "0 auto",
+          boxSizing: "border-box",
         }}
       >
         {children}
