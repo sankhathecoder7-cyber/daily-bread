@@ -11,10 +11,9 @@ export default function Navbar() {
     background: active ? "#0056b3" : "transparent",
     padding: "6px 10px",
     borderRadius: "6px",
-    fontSize: "14px",
+    fontSize: "13px",
     fontWeight: "500",
     whiteSpace: "nowrap",
-    transition: "all 0.2s ease",
     flexShrink: 0,
   });
 
@@ -25,51 +24,47 @@ export default function Navbar() {
         top: 0,
         left: 0,
         right: 0,
-        minHeight: "70px",
-        height: "auto",
+        height: "70px",
         background: "#fff",
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between",
-        padding: "10px 15px",
+        padding: "0 10px",
         boxShadow: "0 2px 10px rgba(0,0,0,0.08)",
         zIndex: 1000,
-        flexWrap: "wrap",
+        overflow: "hidden",
       }}
     >
       {/* LOGO */}
       <Link
         to="/"
         style={{
+          fontWeight: "bold",
+          fontSize: "15px",
           textDecoration: "none",
           color: "#111",
-          fontWeight: "bold",
-          fontSize: "18px",
           whiteSpace: "nowrap",
+          flexShrink: 0,
         }}
       >
         🍞 DAILY BREAD
       </Link>
 
-      {/* MENU (SCROLLABLE ON MOBILE) */}
+      {/* MENU (FIXED MOBILE SCROLL) */}
       <div
         style={{
           display: "flex",
-          alignItems: "center",
           gap: "6px",
           flex: 1,
-          marginLeft: "10px",
-          marginRight: "10px",
+          margin: "0 10px",
           overflowX: "auto",
           whiteSpace: "nowrap",
-          paddingBottom: "4px",
+          alignItems: "center",
         }}
       >
         <Link style={linkStyle(isActive("/"))} to="/">Home</Link>
-        <Link style={linkStyle(isActive("/jobs"))} to="/jobs">All Jobs</Link>
+        <Link style={linkStyle(isActive("/jobs"))} to="/jobs">Jobs</Link>
         <Link style={linkStyle(isActive("/tenders"))} to="/tenders">Tenders</Link>
-        <Link style={linkStyle(isActive("/post-job"))} to="/post-job">Post Job</Link>
-        <Link style={linkStyle(isActive("/post-tender"))} to="/post-tender">Post Tender</Link>
+        <Link style={linkStyle(isActive("/post-job"))} to="/post-job">Post</Link>
         <Link style={linkStyle(isActive("/blog"))} to="/blog">Blog</Link>
         <Link style={linkStyle(isActive("/contact"))} to="/contact">Contact</Link>
       </div>
@@ -80,11 +75,11 @@ export default function Navbar() {
         style={{
           background: "#0056b3",
           color: "#fff",
-          padding: "8px 12px",
-          borderRadius: "8px",
-          textDecoration: "none",
+          padding: "6px 10px",
+          borderRadius: "6px",
+          fontSize: "13px",
           fontWeight: "bold",
-          whiteSpace: "nowrap",
+          textDecoration: "none",
           flexShrink: 0,
         }}
       >
